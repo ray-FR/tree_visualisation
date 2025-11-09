@@ -2,3 +2,4 @@ stuff/
 .DS_Store
 test
 Makefile
+textreader.o
