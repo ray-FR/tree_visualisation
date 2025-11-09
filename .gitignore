@@ -1,2 +1,4 @@
 stuff/
 .DS_Store
+test
+Makefile
