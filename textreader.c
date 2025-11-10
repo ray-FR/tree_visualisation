@@ -15,6 +15,7 @@ chvec_t * newvec(void) {
   return vec;
 }
 
+void addnewword(chvec_t* vec){}
 
 int issep(char txt){
     if (isspace(txt) || txt == '!' || txt == '?' || txt == '.' || txt == '-' || txt == ',' || txt == ';' || txt == ':'){
@@ -26,36 +27,36 @@ int issep(char txt){
 
 
 int main(){
-    //char buff[1024];
-    chvec_t* t = newvec();
-    assert(t);
-    //int numvec = 0;
-    // while (fgets(buff, sizeof buff, stdin) != NULL){
-    //     int i = 0;
-    //     int taillem = 1;
-    //     int iss = 0;
-    //     while(buff[i] != '\n'){
-    //         if (!issep(buff[i])){
-    //             iss = 0;
-    //             taillem++;
-    //         }
-    //         else{
-    //             if (!iss){
-    //                 // te = movetonewvec(numvec, te, taillem);
-    //                 // strncpy(te[numvec].mot, &(buff[i]), taillem);
-    //                 taillem = 0;
-    //                 iss = 1;
-    //                 numvec++;
-    //             }
-    //         }
-    //         i++;
-    //     }    
-    //     // for (int i = 0; i<numvec;i++){
-    //     //     printf("%d: %s", te[i].t, te[i].mot);
-    //     // }
+    chvec_t* te;
+    char buff[1024];
+    te = newvec();
+    assert(te);
+    
+    while (fgets(buff, sizeof buff, stdin) != NULL){
+        int i = 0;
+        int taillem = 1;
+        int iss = 0;
+        while(buff[i] != '\n'){
+            if (!issep(buff[i])){
+                iss = 0;
+                taillem++;
+            }
+            else{
+                if (!iss){
+                    // te = movetonewvec(numvec, te, taillem);
+                    // strncpy(te[numvec].mot, &(buff[i]), taillem);
+                    taillem = 0;
+                    iss = 1;
+                }
+            }
+            i++;
+        }    
+        // for (int i = 0; i<numvec;i++){
+        //     printf("%d: %s", te[i].t, te[i].mot);
+        // }
     
 
-    // }
+    }
 
 
     return 0;

@@ -15,4 +15,6 @@ typedef struct chvec chvec_t;
     char ** data;
   };
 
-  extern chvec_t * newvec(void);
+extern chvec_t * newvec(void);
+
+extern void addnewword (chvec_t* vec);
