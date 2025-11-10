@@ -58,16 +58,23 @@ void addnewword(chvec_t* vec, char* buff){
                 assert(mot);
                 strncpy(mot, &buff[start], len);
                 mot[len] = '\0';
-                //printf("%d: %s\n", len, mot);
                 chevec_push_back(vec, mot);
-                // free(mot);
                 isinmot = 0;
-                vec->size++;
+                
                 
             }
 
         }
         i++;
+    }
+
+    if (isinmot) {
+        int len = i - start;
+        char* mot = malloc(len + 1);
+        assert(mot);
+        strncpy(mot, &buff[start], len);
+        mot[len] = '\0';
+        chevec_push_back(vec, mot);
     }
     return;
 }
