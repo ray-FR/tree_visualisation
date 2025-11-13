@@ -17,6 +17,9 @@ void chevec_push_back(chvec_t* vec, char* data){
         } else
         vec->data = ptr;
     }
+    for (int i = 0 ; i<vec->size; i++){
+        if (strcmp(vec->data[i], data) == 0) return;
+    }
     vec->data[vec->size] = data;
     ++(vec->size);
 }
@@ -79,23 +82,3 @@ void addnewword(chvec_t* vec, char* buff){
 
 
 
-int main(){
-    chvec_t* te;
-    char buff[1024];
-    te = newvec();
-    assert(te);
-    
-    while (fgets(buff, sizeof buff, stdin) != NULL){
-        addnewword(te, buff);
-        
-        for (int i = 0; i<te->size;i++){
-            printf("%d: %s\n", i, te->data[i]);
-        }
-        printf("\n\n");
-
-    }
-
-
-    return 0;
-
-}
