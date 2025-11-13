@@ -15,3 +15,7 @@ typedef struct chvec chvec_t;
     /*! data est le pointeur vers le tableau dynamique d'éléments (ici des int) à stocker. */
     char ** data;
   };
+
+
+extern void prepareFile(FILE* f);
+extern void addGraph(FILE* f);
