@@ -17,9 +17,6 @@ void chevec_push_back(chvec_t* vec, char* data){
         } else
         vec->data = ptr;
     }
-    for (int i = 0; i<vec->size; i++){
-        // if (strcmp(vec->data[i], data)) return; ask teach
-    }
     vec->data[vec->size] = data;
     ++(vec->size);
 }
