@@ -31,6 +31,7 @@ chvec_t * newvec(void) {
   vec->size = 0;
   vec->max_size = 1024;
   vec->data = malloc(vec->max_size * sizeof **(vec->data));
+  vec->alreadyse = malloc(vec->max_size * sizeof **(vec->alreadyse));
   assert(vec->data);
   return vec;
 }
