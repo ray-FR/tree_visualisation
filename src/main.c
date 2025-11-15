@@ -1,4 +1,9 @@
+#include "../include/struct.h"
+#include "../include/textreader.h"
 #include "../include/graph.h"
+
+
+
 
 int main(int argc, char** argv){
     chvec_t* te;
