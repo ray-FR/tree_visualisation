@@ -28,3 +28,19 @@ void libC(arb_t** a){
     free(*a);
     *a=NULL;
 }
+
+void assC(arb_t **a, chvec_t *v, int start, int end)
+{
+    if (start > end) return;
+
+    int mid = (start + end) / 2;
+
+    // create this node
+    *a = allC(v->data[mid], NULL, NULL);
+
+    // lower middle on the left
+    assC(&(*a)->g, v, start, mid - 1);
+
+    // upper middle on the right
+    assC(&(*a)->d, v, mid + 1, end);
+}
