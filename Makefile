@@ -2,8 +2,8 @@ CC = gcc
 CFLAGS = -Wall -O2
 CPPFLAGS = -I.
 LDFLAGS = -lm
-HEADERS = include/textreader.h include/graph.h
-SOURCES = src/textreader.c src/graph.c src/main.c
+HEADERS = include/textreader.h include/graph.h include/arb.h
+SOURCES = src/textreader.c src/graph.c src/arb.c src/main.c
 OBJ = $(patsubst src/%.c, build/%.o, $(SOURCES))
 PROGNAME = graph
 all: $(PROGNAME)
