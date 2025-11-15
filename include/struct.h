@@ -19,4 +19,11 @@ typedef struct chvec {
 
 } chvec_t;
 
+typedef struct arb {
+    char* name;
+    struct arb* g;
+    struct arb* d;
+} arb_t;
+
+
 #endif
