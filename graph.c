@@ -4,12 +4,12 @@ void prepareFile(FILE* f, chvec_t* v){
     fprintf(f, "digraph G {\n"); 
     addGraph(f, v, v->size/2, v->size);
     fprintf(f, "}\n");
-    
-    
-
 }
 
 void addGraph(FILE* f, chvec_t* v, int ind, int nbrelem){
+    
+    // utiliser type foo(g, d), puis appel récursif foo(m-1, d), foo(g, d+1)
+    // d'abord, faire arbre binaire à partir du tableau, puis à partir de l'arbre binaire, remplir graphviz
     int ind_mb;
     int ind_mt;
     

@@ -3,7 +3,7 @@
 int issep(char c) {
     unsigned char uc = (unsigned char)c;
     return isspace(uc) || c == '!' || c == '?' || c == '.' ||
-           c == '-' || c == ',' || c == ';' || c == ':';
+           c == '-' || c == ',' || c == ';' || c == ':' || c == '"';
 }
 void chevec_push_back(chvec_t* vec, char* data){
     if(vec->size == vec->max_size) {
@@ -17,9 +17,7 @@ void chevec_push_back(chvec_t* vec, char* data){
         } else
         vec->data = ptr;
     }
-    for (int i = 0 ; i<vec->size; i++){
-        if (strcmp(vec->data[i], data) == 0) return;
-    }
+    
     vec->data[vec->size] = data;
     ++(vec->size);
 }
@@ -31,7 +29,6 @@ chvec_t * newvec(void) {
   vec->size = 0;
   vec->max_size = 1024;
   vec->data = malloc(vec->max_size * sizeof **(vec->data));
-  vec->alreadyse = malloc(vec->max_size * sizeof **(vec->alreadyse));
   assert(vec->data);
   return vec;
 }

@@ -15,7 +15,7 @@ typedef struct chvec {
     size_t max_size;
     /*! data est le pointeur vers le tableau dynamique d'éléments (ici des int) à stocker. */
     char ** data;
-    char** alreadyseen;
+
 } chvec_t;
 
 extern int issep(char txt);
