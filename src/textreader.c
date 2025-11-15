@@ -40,6 +40,7 @@ void addnewword(chvec_t* vec, char* buff){
     int isinmot = 0;
     int start;
     while(buff[i] != '\n'){
+        if(buff[i] == '\0') break;
         if (!issep(buff[i])){
             //printf("%c", buff[i]);
             if (!isinmot){
