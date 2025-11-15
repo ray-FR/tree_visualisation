@@ -11,5 +11,6 @@ all: $(PROGNAME)
 $(PROGNAME): $(OBJ)
 	$(CC) $(OBJ) $(LDFLAGS) -o build/$(PROGNAME)
 build/%.o: src/%.c $(HEADERS)
+	mkdir -p build
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
