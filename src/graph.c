@@ -1,4 +1,4 @@
-#include "graph.h"
+#include "../include/graph.h"
 
 void prepareFile(FILE* f, chvec_t* v){
     fprintf(f, "digraph G {\n"); 
@@ -13,6 +13,9 @@ void addGraph(FILE* f, chvec_t* v, int ind, int nbrelem){
     int ind_mb;
     int ind_mt;
     
+
+
+    //
     
     if (nbrelem == 1) {
         return;

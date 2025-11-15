@@ -1,7 +1,7 @@
 *
 !.gitignore
 !Makefile
-!graph.c
-!textreader.c
-!graph.h
-!textreader.h
+!include/
+!include/*
+!src/
+!src/*

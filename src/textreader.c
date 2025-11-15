@@ -1,4 +1,4 @@
-#include "textreader.h"
+#include "../include/textreader.h"
 
 int issep(char c) {
     unsigned char uc = (unsigned char)c;
