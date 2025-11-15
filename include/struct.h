@@ -1,3 +1,6 @@
+#ifndef STRUCT_H
+#define STRUCT_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
@@ -15,3 +18,5 @@ typedef struct chvec {
     char ** data;
 
 } chvec_t;
+
+#endif
