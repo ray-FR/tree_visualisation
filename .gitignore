@@ -5,3 +5,5 @@
 !include/*
 !src/
 !src/*
+!build/
+
