@@ -21,8 +21,10 @@ typedef struct chvec {
 
 typedef struct arb {
     char* name;
+    int ind;
     struct arb* g;
     struct arb* d;
+    // faut mettre l'indice aussi dans le tab
 } arb_t;
 
 
