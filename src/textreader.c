@@ -3,7 +3,8 @@
 int issep(char c) {
     unsigned char uc = (unsigned char)c;
     return isspace(uc) || c == '!' || c == '?' || c == '.' ||
-           c == '-' || c == ',' || c == ';' || c == ':' || c == '"';
+           c == '-' || c == ',' || c == ';' || c == ':' || c == '"' || c == '(' || c == ')' || c == '('
+           || c == '{' || c == '}' || c == '[' || c == ']'     ;
 }
 void chevec_push_back(chvec_t* vec, char* data){
     if(vec->size == vec->max_size) {
