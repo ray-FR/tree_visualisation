@@ -1,33 +1,34 @@
 #include "../include/graph.h"
 
-void prepareFile(FILE* f, chvec_t* v){
+void prepareFile(FILE* f, chvec_t* v, arb_t* a){
     fprintf(f, "digraph G {\n"); 
-    addGraph(f, v, v->size/2, v->size);
+    fprintf(f, "    %d [label=\"%s\"]\n", a->ind, a->name);
+    addGraph(f, v, a, a->ind);
     fprintf(f, "}\n");
 }
 
-void addGraph(FILE* f, chvec_t* v, int ind, int nbrelem){
+void addGraph(FILE* f, chvec_t* v, arb_t* a, int n){
+    // dot g.dot -Tpdf -o g.pdf && open g.pdf
     
-    // utiliser type foo(g, d), puis appel récursif foo(m-1, d), foo(g, d+1)
-    // d'abord, faire arbre binaire à partir du tableau, puis à partir de l'arbre binaire, remplir graphviz
-    int ind_mb;
-    int ind_mt;
+    if (a == NULL) return;
+    if (a->g != NULL) fprintf(f, "    %d [label=\"%s\"]\n", a->g->ind, a->g->name);
+
+    if (a->d != NULL) fprintf(f, "    %d [label=\"%s\"]\n", a->d->ind, a->d->name);
     
 
-
-    //
+    if (a->g != NULL) fprintf(f, "    %d:sw->%d\n", n, a->g->ind);
     
-    if (nbrelem == 1) {
-        return;
-    } 
-    ind_mb = ind / 2;
-    if (ind_mb != ind) fprintf(f, "%s -> %s\n", v->data[ind], v->data[ind_mb]);
+    if (a->d != NULL) fprintf(f, "    %d:se->%d\n\n", n, a->d->ind);
+    
 
-    ind_mt = ind + (nbrelem - ind) / 2;
-    if (ind_mt != ind) fprintf(f, "%s -> %s\n", v->data[ind], v->data[ind_mt]);
+    
+    if (a->g != NULL) addGraph(f, v, a->g, a->g->ind);
+    if (a->d != NULL) addGraph(f, v, a->d, a->d->ind);
 
-    if (ind_mb != ind) addGraph(f, v, ind_mb, nbrelem / 2);
-    if (ind_mt != ind) addGraph(f, v, ind_mt, nbrelem - ind_mb);
+
+
+
+    
 
     
     

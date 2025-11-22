@@ -1,10 +1,11 @@
 #include "../include/arb.h"
 
 
-arb_t* allC(char* v, arb_t* fg, arb_t* fd){
+arb_t* allC(char* v, int ind, arb_t* fg, arb_t* fd){
     arb_t* r = malloc (sizeof *r);
     assert(r);
     r->name = v;
+    r->ind = ind;
     r->g = fg;
     r->d = fd;
     return r;
@@ -36,7 +37,7 @@ void assC(arb_t **a, chvec_t *v, int start, int end)
     int mid = (start + end) / 2;
 
     // create this node
-    *a = allC(v->data[mid], NULL, NULL);
+    *a = allC(v->data[mid], mid, NULL, NULL);
 
     // lower middle on the left
     assC(&(*a)->g, v, start, mid - 1);
