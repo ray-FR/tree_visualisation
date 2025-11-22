@@ -9,8 +9,11 @@ PROGNAME = graph
 all: $(PROGNAME)
 
 $(PROGNAME): $(OBJ)
-	$(CC) $(OBJ) $(LDFLAGS) -o build/$(PROGNAME)
+	$(CC) $(OBJ) $(LDFLAGS) -o $(PROGNAME)
 build/%.o: src/%.c $(HEADERS)
-	mkdir -p build
+	@mkdir -p build
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
+clean:
+	@rm -f graph
+	@rm -f build/*
