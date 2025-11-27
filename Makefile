@@ -33,5 +33,6 @@ distdir: $(DISTFILES)
 	$(CP) $(DISTFILES) $(distdir)
 
 clean:
+	@rm g.dot g.pdf
 	@rm -f graph
 	@rm -f build/*
