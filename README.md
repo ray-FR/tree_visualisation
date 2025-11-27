@@ -1,4 +1,4 @@
-# Programme pour lire un fichier puis pour générer son arbre binaire équilibre correspondant
+# Programme pour lire un fichier puis pour générer son arbre binaire équilibré correspondant 
 
 ### Structure du répertoire
 ```
@@ -21,6 +21,7 @@ tree_visualisation/
 
 ### Fonctionnemnt avec example
 - Avoir Graphviz installer sur le système ([lien ici](https://graphviz.org/download/))
+
 ```make && cat horloge_short.txt | ./graph >> g.dot && dot -Tpdf g.dot -o g.pdf```
 
 ### Struct(s) utilisé 
